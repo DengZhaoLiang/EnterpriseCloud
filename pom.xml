@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.3</version>
+        <relativePath/>
+    </parent>
+    
     <modelVersion>4.0.0</modelVersion>
     
     <groupId>com.liang.cloud</groupId>
@@ -29,8 +37,8 @@
         <!-- 项目统一字符集编码UTF-8 -->
         <project.reporting.outputencoding>UTF-8</project.reporting.outputencoding>
         
-        <!-- GitEgg项目统一设置版本号 -->
-        <gitegg.project.version>1.0-SNAPSHOT</gitegg.project.version>
+        <!-- 项目统一设置版本号 -->
+        <project.version>1.0-SNAPSHOT</project.version>
         <!-- SpringBoot版本号 -->
         <spring.boot.version>2.7.3</spring.boot.version>
         <!-- SpringCloud版本号 -->
@@ -112,5 +120,30 @@
             </plugin>
         </plugins>
     </build>
+    
+    <profiles>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <profileactive>dev</profileactive>
+            </properties>
+            <activation>
+                <!--默认为dev环境打包方式-->
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+        <profile>
+            <id>test</id>
+            <properties>
+                <profileactive>test</profileactive>
+            </properties>
+        </profile>
+        <profile>
+            <id>pro</id>
+            <properties>
+                <profileactive>pro</profileactive>
+            </properties>
+        </profile>
+    </profiles>
 
 </project>

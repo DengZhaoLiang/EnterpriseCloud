@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.liang.service.system.mapper.SystemMapper">
+    <select id="list" resultType="com.liang.service.system.entity.System">
+        select *
+        from `system`
+    </select>
+    
+    <select id="page" resultType="com.liang.service.system.entity.System">
+        select *
+        from `system`
+    </select>
+</mapper>
