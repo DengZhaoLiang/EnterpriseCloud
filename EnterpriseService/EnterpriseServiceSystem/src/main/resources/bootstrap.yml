@@ -1,0 +1,13 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: EnterpriseServiceSystem
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 175.178.55.16:8848
+      config:
+        server-addr: 175.178.55.16:8848
+        file-extension: yaml
+        group: DEFAULT_GROUP
