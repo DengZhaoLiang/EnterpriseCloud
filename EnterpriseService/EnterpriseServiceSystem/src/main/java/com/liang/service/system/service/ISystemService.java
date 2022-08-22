@@ -10,4 +10,6 @@ public interface ISystemService {
     List<System> list();
 
     Page<System> page();
+
+    String exception();
 }

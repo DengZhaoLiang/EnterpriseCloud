@@ -1,6 +1,7 @@
 package com.liang.service.system.service.impl;
 
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.liang.common.exception.BusinessException;
 import com.liang.service.system.entity.System;
 import com.liang.service.system.mapper.SystemMapper;
 import com.liang.service.system.service.ISystemService;
@@ -26,5 +27,10 @@ public class SystemServiceImpl implements ISystemService {
         List<System> records = systemMapper.page(page);
         page.setRecords(records);
         return page;
+    }
+
+    @Override
+    public String exception() {
+        throw new BusinessException("自定义异常");
     }
 }
