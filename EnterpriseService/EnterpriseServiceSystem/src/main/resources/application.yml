@@ -3,6 +3,10 @@ server:
 spring:
   application:
     name: EnterpriseServiceSystem
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 175.178.55.16:8848
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher

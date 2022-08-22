@@ -3,6 +3,7 @@ package com.liang.service.system;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.ComponentScan;
 
 
@@ -12,6 +13,7 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @MapperScan("com.liang.service.system.**.mapper")
 @SpringBootApplication
+@EnableDiscoveryClient
 @ComponentScan({"com.liang.service.system", "com.liang.common"})
 public class EnterpriseSystemApplication {
 
