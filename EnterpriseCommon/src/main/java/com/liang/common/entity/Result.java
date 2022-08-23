@@ -3,11 +3,13 @@ package com.liang.common.entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.ToString;
 
 @ApiModel(description = "通用响应类")
 @Getter
 @ToString
+@NoArgsConstructor
 public class Result<T> {
 
     @ApiModelProperty(value = "是否成功", required = true)
