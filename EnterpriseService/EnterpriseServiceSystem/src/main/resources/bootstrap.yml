@@ -11,3 +11,19 @@ spring:
         server-addr: 175.178.55.16:8848
         file-extension: yaml
         group: DEFAULT_GROUP
+    sentinel:
+      filter:
+        enabled: true
+      transport:
+        port: 8719
+        #指定sentinel控制台的地址
+        dashboard: 127.0.0.1:8080
+      eager: true
+  main:
+    allow-bean-definition-overriding: true
+    allow-circular-references: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

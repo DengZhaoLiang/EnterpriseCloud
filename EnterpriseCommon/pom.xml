@@ -135,6 +135,13 @@
             <artifactId>spring-cloud-loadbalancer</artifactId>
             <version>${spring.cloud.openFeign}</version>
         </dependency>
+        
+        <!-- Sentinel 高可用流量防护组件 -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <version>${spring.cloud.alibaba}</version>
+        </dependency>
     </dependencies>
 
 </project>
