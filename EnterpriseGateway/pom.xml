@@ -54,7 +54,7 @@
             <artifactId>spring-cloud-starter-loadbalancer</artifactId>
             <version>${spring.cloud.openFeign}</version>
         </dependency>
-    
+        
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>

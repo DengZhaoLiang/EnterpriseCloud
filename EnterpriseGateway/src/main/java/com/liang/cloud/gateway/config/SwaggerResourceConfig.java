@@ -40,7 +40,7 @@ public class SwaggerResourceConfig implements SwaggerResourcesProvider {
     }
 
     private SwaggerResource swaggerResource(String name, String location) {
-        log.info("name:{},location:{}",name,location);
+        log.info("name:{},location:{}", name, location);
         SwaggerResource swaggerResource = new SwaggerResource();
         swaggerResource.setName(name);
         swaggerResource.setLocation(location);
