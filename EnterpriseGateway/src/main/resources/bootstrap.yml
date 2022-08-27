@@ -23,3 +23,9 @@ spring:
             - Path=/EnterpriseServiceSystem/**
           filters:
             - StripPrefix=1
+        - id: EnterpriseServiceBase
+          uri: lb://EnterpriseServiceBase
+          predicates:
+            - Path=/EnterpriseServiceBase/**
+          filters:
+            - StripPrefix=1
