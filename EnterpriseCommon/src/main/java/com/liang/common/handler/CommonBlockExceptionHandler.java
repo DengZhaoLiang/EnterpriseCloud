@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- *  自定义异常处理器
+ * 自定义异常处理器
  */
 @Slf4j
 @Component

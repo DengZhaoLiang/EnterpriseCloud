@@ -10,5 +10,50 @@
     <modelVersion>4.0.0</modelVersion>
     
     <artifactId>EnterpriseGateway</artifactId>
-
+    
+    <properties>
+        <!-- Spring Cloud Alibaba -->
+        <spring.cloud.alibaba>2021.1</spring.cloud.alibaba>
+        
+        <spring.cloud.openFeign>3.1.3</spring.cloud.openFeign>
+    </properties>
+    
+    <dependencies>
+        <!-- Nacos 服务注册发现-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+            <version>${spring.cloud.alibaba}</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.netflix.ribbon</groupId>
+                    <artifactId>ribbon</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- Nacos 分布式配置-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>${spring.cloud.alibaba}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-bootstrap</artifactId>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+        
+        <!--客户端负载均衡loadbalancer-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-loadbalancer</artifactId>
+            <version>${spring.cloud.openFeign}</version>
+        </dependency>
+    
+    </dependencies>
 </project>
