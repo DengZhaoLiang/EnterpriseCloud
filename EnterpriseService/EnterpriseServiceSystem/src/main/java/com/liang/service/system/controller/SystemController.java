@@ -1,7 +1,7 @@
 package com.liang.service.system.controller;
 
 import com.liang.common.entity.Result;
-import com.liang.service.system.Dto.SystemDTO;
+import com.liang.service.system.dto.SystemDTO;
 import com.liang.service.system.service.ISystemService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -85,5 +85,37 @@ public class SystemController {
     @GetMapping(value = "sentinel/protected")
     public Result<String> sentinelProtected() {
         return Result.data("访问的是限流测试接口");
+    }
+
+    @ApiOperation(value = "慢调用比例熔断策略")
+    @GetMapping(value = "/sentinel/slow/request/ratio")
+    public Result<String> sentinelRR() {
+        try {
+            double randomNumber;
+            randomNumber = Math.random();
+            if (randomNumber >= 0 && randomNumber <= 0.80) {
+                Thread.sleep(300L);
+            } else if (randomNumber >= 0.80 && randomNumber <= 0.80 + 0.10) {
+                Thread.sleep(10L);
+            }
+
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return Result.success("慢调用比例熔断策略");
+    }
+
+    @ApiOperation(value = "异常比例熔断策略")
+    @GetMapping(value = "/sentinel/error/ratio")
+    public Result sentinelRatio() {
+        int i = 1 / 0;
+        return Result.success("异常比例熔断策略");
+    }
+
+    @ApiOperation(value = "异常数熔断策略")
+    @GetMapping(value = "/sentinel/error/count")
+    public Result sentinelCount() {
+        int i = 1 / 0;
+        return Result.success("异常数熔断策略");
     }
 }
